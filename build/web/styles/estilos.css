@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 de nov de 2020, 17:47:09
+    Author     : Janine
+*/
+
+div#interface {
+    font-family: Arial, sans-serif;
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    padding: 10px 10px 10px 10px;
+}
+
+header#cabecalho {
+    border: 1px #606060 solid;
+    height: 150px;
+    background-color: rgb(74,149,149);
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: gold;
+}
+
+nav#menu{
+    background-color: rgb(74,149,149);
+    font-size: 12pt;
+    color: gold;
+    vertical-align: middle;
+    margin: 5px;
+    padding: 5px;
+    height: auto;
+}
+
+a {
+    color: #606060;
+    text-decoration: none;
+    color: gold;
+    vertical-align: middle;
+    margin-left: 20px;
+    margin-right: 18px;
+}
+
+nav#menu a:hover {
+    background-color: black;
+    text-decoration: underline;
+    color: gold;
+}
+
+label.error{
+    color: red;
+    font-style: italic;
+}
+
+table#cadastro {
+    width: 350px;
+    height: 250px;
+    border: 5px solid #606060;
+    border-spacing: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=submit] {
+    text-align: center;
+}
+
+input[type=text]:focus {
+    background-color: white;
+}
+
+table#cadastro input[type=text] {
+    background-color: rgb(215,215,215);
+}
+
+table#cadastro label {
+    font-weight: bold;
+}
+
+
+
+
+footer#rodape{
+    clear: both;
+    border-top: 1px solid #606060
+}
+
+footer#rodape p{
+    text-align: center;
+    color: gold;
+    background-color: rgb(74,149,149);
+    font-weight: bold;
+}
