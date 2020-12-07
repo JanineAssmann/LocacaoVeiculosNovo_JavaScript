@@ -58,6 +58,7 @@
                     </table>
                     <table>
                         <tr><td><input type="submit" value="Salvar Dados" onclick="enviarForm()"/></td></tr>
+                        <tr><td><input type="reset" value="Cancelar"/></td></tr>
                     </table>
                     <hr/>
                     <input type="submit" value="Salvar Dados" onclick="enviarForm()"/>
