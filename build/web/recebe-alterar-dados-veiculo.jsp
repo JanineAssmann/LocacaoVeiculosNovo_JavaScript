@@ -49,9 +49,7 @@
 
                     try {
                         carro.alterar();
-                        out.write("Dados Alterados com Sucesso<br/><hr/>"  +
-                                  "<a href='consultar-veiculo.jsp'>Retornar para Página Anterior</a><br/><br/>" + 
-                                  "<a href='index.html'>Retornar para Página Principal</a>");
+                        out.write("Dados Alterados com Sucesso");
                     } catch (Exception ex) {
                         out.write("Erro: " + ex.getMessage());
                     }

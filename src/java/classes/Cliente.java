@@ -17,6 +17,8 @@ public class Cliente {
     private String numcartao;
     private String email;
     private String telefone;
+    private String usuario;
+    private String senha;
 
     @Override
     public String toString() {
@@ -26,13 +28,15 @@ public class Cliente {
                 + "\nCPF: " + cpf 
                 + "\nNº Cartão: " + numcartao 
                 + "\nE-Mail: " + email 
-                + "\nTelefone: " + telefone
+                + "\nTelefone: " + telefone 
+                + "\nUsuário: " + usuario 
+                + "\nSenha: " + senha 
                 + "\n";
     }
 
     public boolean salvar() {
         String sql = "insert into cliente (nome, cpf, numcartao, ";
-              sql += "email, telefone) values ";
+              sql += "email, telefone, usuario, senha) values ";
               sql += "(?, ?, ?, ?, ?)";
         //Connection con = Conexao.conectar();
         Connection con = Conexao.getInstance();
@@ -43,6 +47,8 @@ public class Cliente {
             stm.setString(3, this.numcartao);
             stm.setString(4, this.email);
             stm.setString(5, this.telefone);
+            stm.setString(6, this.usuario);
+            stm.setString(7, this.senha);
             stm.execute();
         } catch (SQLException ex) {
             System.out.println("Erro: " + ex.getMessage());
@@ -86,7 +92,23 @@ public class Cliente {
         }
         return true;
     }
-    
+
+    public boolean userExist(String pUser) {
+        //Connection con = Conexao.conectar();
+        Connection con = Conexao.getInstance();
+        String sql = "select * from cliente where usuario = ?";
+        //Cliente cliente = null;
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setString(1, pUser);
+            ResultSet rs = stm.executeQuery();
+            return (rs.next());
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+        }
+        return true;
+    }
+
     public static Cliente consultar(int id) {
         //Connection con = Conexao.conectar();
         Connection con = Conexao.getInstance();
@@ -255,6 +277,22 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
     
 }

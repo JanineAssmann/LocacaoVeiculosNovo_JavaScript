@@ -25,14 +25,14 @@ header#cabecalho {
     margin: 5px;
     padding: 5px;
     text-align: center;
-    font-size: 30px;
+    font-size: 40pt;
     font-weight: bold;
     color: gold;
 }
 
 nav#menu{
     background-color: rgb(74,149,149);
-    font-size: 12pt;
+    font-size: 18pt;
     color: gold;
     vertical-align: middle;
     margin: 5px;
@@ -60,33 +60,65 @@ label.error{
     font-style: italic;
 }
 
-table#cadastro {
-    width: 350px;
-    height: 250px;
+table.cadastro {
+    width: auto;
+    height: auto;
     border: 5px solid #606060;
     border-spacing: 5px;
     margin-left: auto;
     margin-right: auto;
 }
 
-input[type=submit] {
-    
+table.cadastro label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 4px;
 }
 
-input[type=text]:focus {
+table.cadastro label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+table.cadastro input[type=text],[type=password] {
+    background-color: rgb(215,215,215);
+    width: 500px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+table.cadastro input[type=text]:focus {
     background-color: white;
 }
 
-table#cadastro input[type=text] {
-    background-color: rgb(215,215,215);
+table.consulta {
+    width: 1500px;
+    height: auto;
+    border: 5px solid #606060;
+    border-spacing: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-table#cadastro label {
-    font-weight: bold;
+tbody.consulta {
+    height: 250px;
+    border: 5px solid #606060;
+    border-spacing: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12pt;
 }
 
-
-
+div.botao {
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
 
 footer#rodape{
     clear: both;
@@ -95,6 +127,7 @@ footer#rodape{
 
 footer#rodape p{
     text-align: center;
+    font-size: 18pt;
     color: gold;
     background-color: rgb(74,149,149);
     font-weight: bold;

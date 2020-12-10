@@ -34,40 +34,83 @@
                     }
                 %>
                 <form action="recebe-alterar-dados-veiculo.jsp" method="POST">
-                    <label>Código</label>
-                    <input type="text" name="idcarro" readonly="true" value="<%out.write(String.valueOf(c.getId()));%>"/>
-                    <br/><br/>
-                    <label>Marca</label>
-                    <input type="text" name="marca" value="<%out.write(c.getMarca());%>"/>
-                    <br/><br/>
-                    <label>Modelo</label>
-                    <input type="text" name="modelo" value="<%out.write(c.getModelo());%>"/>
-                    <br/><br/>
-                    <label>Placa</label>
-                    <input type="text" name="placa" value="<%out.write(c.getPlaca());%>"/>
-                    <br/><br/>
-                    <label>Km</label>
-                    <input type="text" name="km" value="<%out.write(String.valueOf(c.getKm()));%>"/>
-                    <br/><br/>
-                    <input type="checkbox" name="arcond" <%out.write(c.isArcond()?"checked='checked'":"");%>/>
-                    <label>Ar Condicionado</label>
-                    <br/><br/>
-                    <input type="checkbox" name="dirhidraulica" <%out.write(c.isDirhidraulica()?"checked='checked'":"");%>/>
-                    <label>Direção Hidráulica</label>
-                    <br/><br/>
-                    <input type="checkbox" name="cambioautom" <%out.write(c.isCambioautom()?"checked='checked'":"");%>/>
-                    <label>Câmbio Automático</label>
+                    <table class="cadastro">
+                        <tr>
+                            <td><label>Código</label></td>
+                            <td><input type="text" name="idcarro" readonly="true" value="<%out.write(String.valueOf(c.getId()));%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Marca</label></td>
+                            <td><input type="text" name="marca" value="<%out.write(c.getMarca());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Modelo</label></td>
+                            <td><input type="text" name="modelo" value="<%out.write(c.getModelo());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Placa</label></td>
+                            <td><input type="text" name="placa" value="<%out.write(c.getPlaca());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Km</label></td>
+                            <td><input type="text" name="km" value="<%out.write(String.valueOf(c.getKm()));%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Ar Condicionado</label></td>
+                            <td><input type="checkbox" name="arcond" <%out.write(c.isArcond()?"checked='checked'":"");%>/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Direção Hidráulica</label></td>
+                            <td><input type="checkbox" name="dirhidraulica" <%out.write(c.isDirhidraulica()?"checked='checked'":"");%>/></td>
+                        </tr>
+                        <td><label>Câmbio Automático</label></td>
+                        <td><input type="checkbox" name="cambioautom" <%out.write(c.isCambioautom()?"checked='checked'":"");%>/></td>
+
+                    </table>
                     <hr/>
-                    <input type="submit" value="Confirmar Alteração dos Dados"/>
-                    <br/><br/>
+                    <div class="botao">
+                        <input type="submit" value="Alterar" onclick="enviarForm()"/>
+                        <input type="reset" value="Cancelar"/>
+                    </div>
                 </form>
             </article>
         </section>
-            <button onclick="location.href='consultar-veiculo.jsp'">Retornar para Página Anterior</button><br/><br/>
-            <button onclick="location.href='index.html'">Retornar para Página Principal</button>
+    </div>
         <footer id="rodape">
             <script src="scripts/rodape.js"></script>
         </footer>
-    </div>
+        <script>
+            function enviarForm() {
+                var marca = document.getElementsByName("marca");
+                if (marca[0].value === "") {
+                    marca[0].focus();
+                    alert("Informe a Marca");
+                    exit();
+                }
+                
+                var modelo = document.getElementsByName("modelo");
+                if (modelo[0].value === "") {
+                    modelo[0].focus();
+                    alert("Informe a Modelo");
+                    exit();
+                }
+                
+                var placa = document.getElementsByName("placa");
+                if (placa[0].value === "") {
+                    placa[0].focus();
+                    alert("Informe a Placa");
+                    exit();
+                }
+
+                var km = document.getElementsByName("km");
+                if (km[0].value === "") {
+                    km[0].focus();
+                    alert("Informe Km");
+                    exit();
+                }
+
+                document.forms[0].submit();
+            }
+        </script>
     </body>
 </html>

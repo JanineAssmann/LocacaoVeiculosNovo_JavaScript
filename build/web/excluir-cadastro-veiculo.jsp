@@ -47,8 +47,6 @@
             </article>
         </section>
         <hr/>
-        <input type="button" value="Retornar para Página Anterior" onclick="location.href='consultar-veiculo.jsp'"/><br/><br/>
-        <input type="button" value="Retornar para Página Principal" onclick="location.href='index.html'"/>
         <footer id="rodape">
             <script src="scripts/rodape.js"></script>
         </footer>

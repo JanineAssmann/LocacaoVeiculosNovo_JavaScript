@@ -51,6 +51,7 @@
                         }
                     }
                 %>
+                <hr/>
                 <form method="POST">
                     <label>Pesquisar: </label>
                     <select name="tipo">
@@ -62,9 +63,8 @@
                     <input type="text" name="txtPesquisa" value="<%out.write(txtPesquisa);%>"/>
                     <button type="submit">Buscar</button>
                 <hr/>
-
                 </form>
-                <table> <!-- Indicação do início da tabela -->
+                <table class="consulta"> <!-- Indicação do início da tabela -->
                     <thead> <!-- Indicação de início do cabeçalho da tabela -->
                         <th>Código</th> <!-- Item do cabeçalho da tabela -->
                         <th>CPF</th> <!-- Item do cabeçalho da tabela -->
@@ -76,9 +76,9 @@
                         <th>Excluir Registro</th> <!-- Item do cabeçalho da tabela -->
 
                     </thead> <!-- Indicação de final do cabeçalho da tabela -->
-                    <tbody> <!-- Indicação de início do corpo da tabela -->
+                    <tbody class="consulta"> <!-- Indicação de início do corpo da tabela -->
                         <% for (Cliente cli : clientes) { %>
-                        <tr> <!-- Indicação do início dos itens que formarão as linhas da tabela -->
+                        <tr id="botao"> <!-- Indicação do início dos itens que formarão as linhas da tabela -->
                             <td><%out.write(String.valueOf(cli.getId()));%></td>
                             <td><%out.write(cli.getCpf());%></td>
                             <td><%out.write(cli.getNome());%></td>
@@ -94,7 +94,6 @@
                 <hr/>
             </article>
         </section>
-        <button onclick="location.href='index.html'">Retornar para Página Principal</button><br/>
         <footer id="rodape">
             <script src="scripts/rodape.js"></script>
         </footer>

@@ -44,12 +44,9 @@
                     carro.setArcond(arcond);
                     carro.setDirhidraulica(dirhidraulica);
                     carro.setCambioautom(cambioautom);
-
                     try {
                         carro.salvar();
-                        out.write("Dados Cadastrados com Sucesso<br/>"  +
-                                "<button onclick='history.go(-1)'>Retornar para Página Anterior</button><br/>" + 
-                                "<button onclick='history.go(-2)'>Retornar para Página Principal</button>");
+                        out.write("Dados Cadastrados com Sucesso");
                     } catch (Exception ex) {
                         out.write("Erro: " + ex.getMessage());
                     }

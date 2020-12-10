@@ -32,21 +32,28 @@
                     String numcartao = request.getParameter("numcartao");
                     String email = request.getParameter("email");
                     String telefone = request.getParameter("telefone");
+                    String usuario = request.getParameter("usuario");
+                    String senha = request.getParameter("senha");
 
                     Cliente cliente = new Cliente();
-                    cliente.setCpf(cpf);
-                    cliente.setNome(nome.toUpperCase());
-                    cliente.setNumcartao(numcartao);
-                    cliente.setEmail(email.toLowerCase());
-                    cliente.setTelefone(telefone);
-
-                    try {
-                        cliente.salvar();
-                        out.write("Dados Cadastrados com Sucesso<br/><br/>" + 
-                                  "<button onclick='history.go(-1)'>Retornar para Página Anterior</button><br/><br/>" + 
-                                  "<button onclick='history.go(-2)'>Retornar para Página Principal</button>");
-                    } catch (Exception ex) {
-                        out.write("Erro: " + ex.getMessage());
+                    if (cliente.userExist(request.getParameter("usuario"))) {
+                        String msg = "Já existe cadastro com usuário informado.";
+                        response.sendRedirect("informacao.jsp?msg=" + msg);
+                    } else {
+                        cliente.setCpf(cpf);
+                        cliente.setNome(nome.toUpperCase());
+                        cliente.setNumcartao(numcartao);
+                        cliente.setEmail(email.toLowerCase());
+                        cliente.setTelefone(telefone);
+                        cliente.setUsuario(usuario);
+                        cliente.setSenha(senha);
+                        try {
+                            cliente.salvar();
+                            String msg = "Dados Cadastrados com Sucesso";
+                            response.sendRedirect("informacao.jsp?msg=" + msg);
+                        } catch (Exception ex) {
+                            out.write("Erro: " + ex.getMessage());
+                        }
                     }
                 %>
             </article>

@@ -25,8 +25,9 @@
                 <script src="scripts/menu.js"></script>
             </nav>
             <article>
+                <p id="erros"></p>
                 <form action="recebe-cadastrar-veiculos.jsp" method="POST">
-                <table id="cadastro">
+                <table class="cadastro">
                     <tr>
                         <td><label>Marca</label></td>
                         <td><input type="text" name="marca"/></td>
@@ -56,12 +57,11 @@
                         <td><input type="checkbox" name="cambioautom"/></td>
                     </tr>
                     </table>
-                    <table>
-                        <tr><td><input type="submit" value="Salvar Dados" onclick="enviarForm()"/></td></tr>
-                        <tr><td><input type="reset" value="Cancelar"/></td></tr>
-                    </table>
                     <hr/>
-                    <input type="submit" value="Salvar Dados" onclick="enviarForm()"/>
+                    <div class="botao">
+                        <input type="submit" value="Salvar" onclick="enviarForm()"/>
+                        <input type="reset" value="Cancelar"/>
+                    </div>
                 </form>
             </article>
         </section>
@@ -71,17 +71,20 @@
         </footer>
         <script>
             function enviarForm() {
+                var semErros = true;
+                var erros = document.getElementById("erros");
                 var marca = document.getElementsByName("marca");
                 if (marca[0].value === "") {
-                    marca[0].focus();
-                    alert("Informe a Marca");
-                    exit();
+                    erros.innerHTML = "Informe Marca";
+                    document.getElementById("erroCpf").innerHTML = "Informar Marca";
+                    //marca[0].focus();
+                    semErros = false;
                 }
                 
                 var modelo = document.getElementsByName("modelo");
                 if (modelo[0].value === "") {
                     modelo[0].focus();
-                    alert("Informe a Modelo");
+                    alert("Informe o Modelo");
                     exit();
                 }
                 

@@ -57,6 +57,7 @@
                         }
                     }
                 %>
+                <hr/>
                 <form method="POST">
                     <label>Pesquisar: </label>
                     <select name="tipo">
@@ -70,7 +71,7 @@
                     <button type="submit">Buscar</button>
                 <hr/>
                 </form>
-                    <table> <!-- Indicação do início da tabela -->
+                    <table class="consulta"> <!-- Indicação do início da tabela -->
                         <thead> <!-- Indicação de início do cabeçalho da tabela -->
                             <th>Código</th> <!-- Item do cabeçalho da tabela -->
                             <th>Marca</th> <!-- Item do cabeçalho da tabela -->
@@ -86,9 +87,9 @@
                             <!--criar os botões para as opções de excluir e editar-->
 
                         </thead> <!-- Indicação de final do cabeçalho da tabela -->
-                        <tbody> <!-- Indicação de início do corpo da tabela -->
+                        <tbody class="consulta"> <!-- Indicação de início do corpo da tabela -->
                             <% for (Carro car: carros) { %>
-                            <tr> <!-- Indicação do início dos itens que formarão as linhas da tabela -->
+                            <tr id="botao"> <!-- Indicação do início dos itens que formarão as linhas da tabela -->
                                 <td><% out.write(String.valueOf(car.getId())); %></td> <!-- Conteúdo da célula -->
                                 <td><% out.write(car.getMarca()); %></td> <!-- Conteúdo da célula -->
                                 <td><% out.write(car.getModelo()); %></td> <!-- Conteúdo da célula -->
@@ -100,16 +101,14 @@
                                 out.write("<td>" + (car.isCambioautom() ? "Sim" : "Não") + "</td>"); /* operador ternário para marcação do checkbox */
                                 %>
 
-                            <td><%out.write("<a href=alterar-dados-veiculo.jsp?idcarro="+String.valueOf(car.getId())+">Alterar</a>");%></td>
-                            <td><%out.write("<a href=excluir-cadastro-veiculo.jsp?idcarro="+String.valueOf(car.getId())+">Excluir</a>");%></td>
+                                <td><%out.write("<a href=alterar-dados-veiculo.jsp?idcarro="+String.valueOf(car.getId())+">Alterar</a>");%></td>
+                                <td><%out.write("<a href=excluir-cadastro-veiculo.jsp?idcarro="+String.valueOf(car.getId())+">Excluir</a>");%></td>
                             </tr> <!-- Indicação do fim dos itens que formarão as linhas da tabela -->
                                 <% } %>
                         </tbody> <!-- Indicação de final do corpo da tabela -->
                     </table> <!-- Indicação do final da tabela -->
-                    <hr/>
             </article>
         </section>
-            <button onclick="location.href='index.html'">Retornar para Página Principal</button><br/> 
         <footer id="rodape">
             <script src="scripts/rodape.js"></script>
         </footer>

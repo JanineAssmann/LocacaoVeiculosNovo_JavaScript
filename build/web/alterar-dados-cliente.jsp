@@ -34,34 +34,76 @@
                     }
                 %>
                 <form action="recebe-alterar-dados-cliente.jsp" method="POST">
-                    <label>Código</label>
-                    <input type="text" name="idcliente" readonly="true" value="<%out.write(String.valueOf(cli.getId()));%>"/>
-                    <br/><br/>
-                    <label>CPF</label>
-                    <input type="text" name="cpf" value="<%out.write(cli.getCpf());%>"/>
-                    <br/><br/>
-                    <label>Nome</label>
-                    <input type="text" name="nome" value="<%out.write(cli.getNome());%>"/>
-                    <br/><br/>
-                    <label>E-Mail</label>
-                    <input type="text" name="email" value="<%out.write(cli.getEmail());%>"/>
-                    <br/><br/>
-                    <label>Telefone</label>
-                    <input type="text" name="telefone" value="<%out.write(cli.getTelefone());%>"/>
-                    <br/><br/>
-                    <label>Número do Cartão</label>
-                    <input type="text" name="numcartao" value="<%out.write(cli.getNumcartao());%>"/>
+                    <table class="cadastro">
+                        <tr>
+                            <td><label>Código</label></td>
+                            <td><input type="text" name="idcliente" readonly="true" value="<%out.write(String.valueOf(cli.getId()));%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>CPF</label></td>
+                            <td><input type="text" name="cpf" value="<%out.write(cli.getCpf());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Nome</label></td>
+                            <td><input type="text" name="nome" value="<%out.write(cli.getNome());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>E-Mail</label></td>
+                            <td><input type="text" name="email" value="<%out.write(cli.getEmail());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Telefone</label></td>
+                            <td><input type="text" name="telefone" value="<%out.write(cli.getTelefone());%>"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Número do Cartão</label></td>
+                            <td><input type="text" name="numcartao" value="<%out.write(cli.getNumcartao());%>"/></td>
+                        </tr>
+                    </table>
                     <hr/>
-                    <input type="submit" value="Confirmar Alteração dos Dados"/>
-                    <br/><br/>
+                    <div class="botao">
+                        <input type="submit" value="Confirmar" onclick="enviarForm()"/>
+                        <input type="reset" value="Cancelar"/>
+                    </div>
                 </form>
             </article>
         </section>
-            <button onclick="location.href='consultar-cliente.jsp'">Retornar para Página Anterior</button><br/><br/>
-            <button onclick="location.href='index.html'">Retornar para Página Principal</button>
+    </div>
         <footer id="rodape">
             <script src="scripts/rodape.js"></script>
         </footer>
-    </div>
+        <script>
+            function enviarForm() {
+                var nome = document.getElementsByName("nome");
+                if (nome[0].value === "") {
+                    nome[0].focus();
+                    alert("Informe a Nome");
+                    exit();
+                }
+                
+                var email = document.getElementsByName("email");
+                if (email[0].value === "") {
+                    email[0].focus();
+                    alert("Informe a E-Mail");
+                    exit();
+                }
+                
+                var telefone = document.getElementsByName("telefone");
+                if (telefone[0].value === "") {
+                    telefone[0].focus();
+                    alert("Informe a Telefone");
+                    exit();
+                }
+
+                var numcartao = document.getElementsByName("numcartao");
+                if (numcartao[0].value === "") {
+                    numcartao[0].focus();
+                    alert("Informe Número do Cartão");
+                    exit();
+                }
+
+                document.forms[0].submit();
+            }
+        </script>
     </body>
 </html>

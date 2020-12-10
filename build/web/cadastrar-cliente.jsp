@@ -26,31 +26,43 @@
             </nav>
             <article>
                 <p id="erros"></p>
-                <form action="receber-dados-cliente.jsp" method="POST">
-                    <label>CPF</label>
-                    <input type="text" name="cpf"/>
-                    <label id="erroCpf" class="error"></label>
-                    <br/>
-
-                    <label>Nome Completo</label>
-                    <input type="text" name="nome"/>
-                    <br/>
-
-                    <label>Número do Cartão</label>
-                    <input type="text" name="numcartao"/>
-                    <br/>
-
-                    <label>E-Mail</label>
-                    <input type="text" name="email"/>
-                    <br/>
-
-                    <label>Telefone</label>
-                    <input type="text" name="telefone"/>
-                    <br/>            
-
+                <form action="recebe-cadastrar-cliente.jsp" method="POST">
+                    <table class="cadastro">
+                    <tr>
+                        <td><label>CPF</label></td>
+                        <td><input type="text" name="cpf"/></td>
+                        <td><label id="erroCpf" class="error"></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nome Completo</label></td>
+                        <td><input type="text" name="nome"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Número do Cartão</label></td>
+                        <td><input type="text" name="numcartao"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>E-Mail</label></td>
+                        <td><input type="text" name="email"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Telefone</label></td>
+                        <td><input type="text" name="telefone"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Usuário</label></td>
+                        <td><input type="text" name="usuario"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Senha</label></td>
+                        <td><input type="password" name="senha"/></td>
+                    </tr>
+                    </table>
                     <hr/>
-                    <input type="submit" value="Salvar Dados" onclick="enviarForm()"/>
-                    <br/>
+                    <div class="botao">
+                        <input type="submit" value="Salvar" onclick="enviarForm()"/>
+                        <input type="reset" value="Cancelar"/>
+                    </div>
                 </form>
             </article>
         </section>
@@ -58,7 +70,6 @@
             <script src="scripts/rodape.js"></script>
         </footer>
     </div>
-
         <script>
             function enviarForm() {
                 var semErros = true;
