@@ -72,6 +72,8 @@
                         <th>Nº do Cartão</th> <!-- Item do cabeçalho da tabela -->
                         <th>E-Mail</th> <!-- Item do cabeçalho da tabela -->
                         <th>Telefone</th> <!-- Item do cabeçalho da tabela -->
+                        <th>Usuário</th>
+                        <th>Senha</th>
                         <th>Alterar Dados</th> <!-- Item do cabeçalho da tabela -->
                         <th>Excluir Registro</th> <!-- Item do cabeçalho da tabela -->
 
@@ -85,6 +87,8 @@
                             <td><%out.write(cli.getNumcartao());%></td>
                             <td><%out.write(cli.getEmail());%></td>
                             <td><%out.write(cli.getTelefone());%></td>
+                            <td><%out.write(cli.getUsuario());%></td>
+                            <td><%out.write(cli.getSenha());%></td>
                             <td><%out.write("<a href=alterar-dados-cliente.jsp?idcliente="+String.valueOf(cli.getId())+">Alterar</a>");%></td>
                             <td><%out.write("<a href=excluir-cadastro-cliente.jsp?idcliente="+String.valueOf(cli.getId())+">Excluir</a>");%></td>
                         </tr> <!-- Indicação do início dos itens que formarão as linhas da tabela -->

@@ -109,6 +109,23 @@ public class Cliente {
         return true;
     }
 
+    public static boolean podeLogar(String pUser, String pPassword) {
+        //Connection con = Conexao.conectar();
+        Connection con = Conexao.getInstance();
+        String sql = "select * from cliente where usuario = ? and senha = ?";
+        //Cliente cliente = null;
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setString(1, pUser);
+            stm.setString(2, pPassword);
+            ResultSet rs = stm.executeQuery();
+            return (rs.next());
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+        }
+        return true;
+    }
+
     public static Cliente consultar(int id) {
         //Connection con = Conexao.conectar();
         Connection con = Conexao.getInstance();

@@ -30,6 +30,12 @@
             </nav>
             <article>
                 <%
+                    String usuario = (String) session.getAttribute("usuario");
+                    if (usuario == null) {
+                        response.sendRedirect("login.jsp");
+                    }
+                %>
+                <%
                     Carro carro = new Carro();
                     List<Carro> carros = carro.consultar();
 

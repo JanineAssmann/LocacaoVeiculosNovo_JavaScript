@@ -11,6 +11,8 @@ document.write("<a href='cadastrar-cliente.jsp'>Cadastro de Clientes</a>");
 document.write("<a href='consultar-cliente.jsp'>Consulta de Clientes</a>");
 document.write("<a href='cadastrar-locacao.jsp'>Cadastro de Locações</a>");
 document.write("<a href='consultar-locacao.jsp'>Consulta de Locações</a>");
+document.write("<a href='login.jsp'>Login</a>");
+document.write("<a href='logout.jsp'>Logout</a>");
 
 //document.write("<button onclick='location.href='consultar-cliente.jsp'>Consulta de Clientes</button>  ");
 //document.write("<button onclick='location.href='cadastrar-locacao.jsp'>Cadastro de Locações</button>  ");

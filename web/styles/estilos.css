@@ -110,6 +110,18 @@ tbody.consulta {
     font-size: 12pt;
 }
 
+div.login {
+    display: block;
+    height: auto;
+    width: 500px;
+    text-align: center;
+    border: 5px solid #606060;
+    border-spacing: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12pt;
+}
+
 div.botao {
     vertical-align: middle;
     margin-left: auto;
